@@ -5,7 +5,9 @@
 
 > 5 day weather forecast plus current weather conditions
 
-### Screenshots
+### Screenshot
+
+![Screenshot](./assets/images/WeatherDashboard.png)
 
 
 ### ✨ [Demo](https://therealplanz.github.io/WeatherDashboard/)

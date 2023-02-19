@@ -21,7 +21,7 @@ $(document).ready(function () {
       city +
       "&appid=" +
       apiKey +
-      "&units=metric";
+      "&units=imperial";
 
     $.ajax({
       url: queryURL,
@@ -39,10 +39,10 @@ $(document).ready(function () {
       $(".card-body").empty();
       $(".card-body").append($("<h2>").text(cityName));
       $(".card-body").append(
-        $("<p>").text("Temperature: " + temperature + " °C")
+        $("<p>").text("Temperature: " + temperature + " °F")
       );
       $(".card-body").append($("<p>").text("Humidity: " + humidity + "%"));
-      $(".card-body").append($("<p>").text("Wind Speed: " + windSpeed + " m/s"));
+      $(".card-body").append($("<p>").text("Wind Speed: " + windSpeed + " mph"));
       $(".card-body").append($("<img>").attr("src", iconUrl));
       getWeeklyWeatherData(city); // call function to fetch weekly weather data
     });
@@ -55,7 +55,7 @@ $(document).ready(function () {
       city +
       "&appid=" +
       apiKey +
-      "&units=metric";
+      "&units=imperial";
 
     $.ajax({
       url: queryURL,
@@ -64,7 +64,7 @@ $(document).ready(function () {
       // Group weather data by date
       var weatherDataByDate = {};
       response.list.forEach(function (forecast) {
-        var date = moment(forecast.dt_txt).format("dddd, MMM Do");
+        var date = moment(forecast.dt_txt).format("L");
         if (!weatherDataByDate[date]) {
           weatherDataByDate[date] = [];
         }
@@ -96,7 +96,7 @@ $(document).ready(function () {
       city +
       "&appid=" +
       apiKey +
-      "&units=metric";
+      "&units=imperial";
 
     $.ajax({
       url: queryURL,
@@ -105,7 +105,7 @@ $(document).ready(function () {
       // Group weather data by date
       var weatherDataByDate = {};
       response.list.forEach(function (forecast) {
-        var date = moment(forecast.dt_txt).format("dddd, MMM Do");
+        var date = moment(forecast.dt_txt).format("L");
         if (!weatherDataByDate[date]) {
           weatherDataByDate[date] = [];
         }
@@ -127,7 +127,7 @@ $(document).ready(function () {
         var forecastCardEl = $("<div>").addClass("card col-md-2 mx-2");
         var cardBodyEl = $("<div>").addClass("card-body p-2");
         var dateEl = $("<h5>").addClass("card-title").text(date);
-        var tempEl = $("<p>").addClass("card-text").text("Temp: " + temperature + " °C");
+        var tempEl = $("<p>").addClass("card-text").text("Temp: " + temperature + " °F");
         var humidityEl = $("<p>").addClass("card-text").text("Humidity: " + humidity + "%");
         var iconEl = $("<img>").attr("src", iconUrl);
 

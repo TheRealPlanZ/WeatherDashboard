@@ -30,6 +30,10 @@ header.jumbotron {
     padding: 20px;
   }
   
+  .search-bar {
+    padding: 20px;
+  }
+
   /* add some margin to the weekly forecast section */
   #weeklyForecast {
     margin-top: 20px;
